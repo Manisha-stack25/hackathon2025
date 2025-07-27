@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Health Buddy - Login</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+
+
+      <div class="symptom-checker">
+        <h2>Feeling Unwell?</h2>
+        <input type="text" id="symptom" placeholder="Enter a symptom (e.g., headache)" />
+        <button id="check-btn">Get Suggestion</button>
+        <div id="suggestion" class="suggestion-box"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("check-btn").addEventListener("click", function () {
+      const symptom = document.getElementById("symptom").value.trim().toLowerCase();
+      const suggestionBox = document.getElementById("suggestion");
+
+      let response = "Please enter a valid symptom.";
+
+      switch (symptom) {
+        case "headache":
+          response = "It could be due to stress, dehydration, or eye strain. Try resting, hydrating, and reducing screen time.";
+          break;
+        case "vomiting":
+          response = "sip ORS or fluids slowly and take rest.eat light once it settles . see a doctor if it doesn't stop";
+          break; 
+        case "cough":
+          response = "A cough might indicate a cold or allergies. Stay hydrated and rest. If it persists, consult a doctor.";
+          break;
+        case "stress":
+          response = "take deep breaths , go for a short walk ,or listen to calming music. take to someone you trust if it feels heavy.";
+          break;  
+        case "stomach pain":
+          response = "A try resting ,sipping warm water or herbal tea and avoiding heavy or spicy foodor may be you are suffering from food poisoining.if pain worsens or is severe consult a doctor promptly";
+          break;
+        case "fever":
+          response = "Monitor your temperature. Stay hydrated and rest. See a healthcare provider if it exceeds 102°F or lasts over 2 days.";
+          break;
+        case "joint pain":
+          response = "rest the joint ,apply warmth ,and take a mild painkiller if needed .see a doctor if pain are sweeling continues";
+          break;  
+        case "nausea":
+          response = "Nausea can stem from food issues or infection. Stick to bland foods and hydrate. Consult a doctor if it worsens.";
+          break;
+          case "malaria":
+          response = "Nausea can stem from food issues or infection. Stick to bland foods and hydrate. Consult a doctor if it worsens.";
+          break;
+      
+        default:
+          response = "This symptom is not recognized. Please consult a healthcare professional for accurate advice.";
+      }
+
+      suggestionBox.textContent = response;
+    });
+  </script>
+</body>
+</html>
